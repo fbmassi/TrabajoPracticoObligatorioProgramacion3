@@ -39,7 +39,7 @@ El algoritmo `generarPalabras` se implementa utilizando la técnica de backtrack
 
 4. **Resultados**: Al finalizar todas las iteraciones y llamadas recursivas, la lista `resultado` contiene todas las palabras generadas dentro del rango especificado.
 
-![](pseudocodigo)
+![](Imagenes/pseudocodigo)
 
 ## Análisis de Complejidad Temporal Teórica y Práctica
 
@@ -53,22 +53,22 @@ La función generarPalabras es recursiva y se llama L veces en el peor de los ca
 
 Como se trata de una resta, la complejidad temporal se define por:
 
-![](matrizResta)
+![](Imagenes/matrizResta)
 
 Esta función cae en el caso A > 1. Por lo tanto, la complejidad temporal, en el peor de los casos es igual a…
 
-![](complejidad1)
+![](Imagenes/complejidad1)
 
 donde \( L \) representa el número de letras en los conjuntos de letras analizados.
 
 También hay que tener en cuenta que la función recursiva ocurre dentro de otro ciclo que se repite (Y – X + 1) veces en la función principal y que el costo de ejecutar ‘generarPalabras’ no es el mismo para cada longitud deseada. Por lo tanto, la complejidad temporal total la podemos calcular como...
 
-![](complejidadFinal)
+![](Imagenes/complejidadFinal)
 
 ### Práctica
 La clase de prueba `AlgoritmoLenguajeDeLaHumanidadImplTest` evalúa el rendimiento del método `descubirPalabrasDeLaHumanidad`. Las pruebas muestran que el algoritmo mantiene tiempos de ejecución consistentemente eficientes para diferentes tamaños de entrada (5, 10, 50, 100 palabras).
 
-![](resultados)
+![](Imagenes/resultados)
 
 ### Conclusiones
 Basado en los resultados obtenidos del algoritmo descubirPalabrasDeLaHumanidad, se puede concluir que es efectivo para generar una variedad significativa de palabras dentro de los parámetros establecidos. En particular, se observó que al emplear conjuntos específicos de letras, se pueden crear cantidades variadas de palabras que cumplen con criterios específicos de longitud y combinación de letras.
@@ -77,9 +77,9 @@ Sin embargo, es importante reconocer la necesidad de ajustar los parámetros par
 palabras se mantienen relativamente estables en los casos en que se
 generan 5, 10 y 50 palabras.
  - Complejidad temporal: se observa que conforme aumenta el número de palabras generadas (de 5 a 100 palabras), los tiempos de ejecución aumentan de manera gradual y se mantienen consistentemente eficientes en los casos de 5, 10 y 50 palabras.
-   Nos resultó llamativo que el promedio de la complejidad temporal para generar 10 palabras sea mayor que el que se obtuvo para generar 50 palabras. Esto sugeriría que Este patrón sugiere que el
-   algoritmo es eficiente para volúmenes moderados de datos de entrada, manteniendo tiempos de ejecución relativamente bajos, constantes y predecibles.
-   Sin embargo, es importante destacar que al generar 100 palabras, la complejidad temporal experimenta un aumento significativo, respecto a los valores promedio anteriores. Esto podría indicar que el
-   algoritmo tiene limitaciones en cuanto a eficiencia para manejar grandes cantidades de datos
-   de entrada.
+Nos resultó llamativo que el promedio de la complejidad temporal para generar 10 palabras sea mayor que el que se obtuvo para generar 50 palabras. Esto sugeriría que Este patrón sugiere que el
+algoritmo es eficiente para volúmenes moderados de datos de entrada, manteniendo tiempos de ejecución relativamente bajos, constantes y predecibles.
+Sin embargo, es importante destacar que al generar 100 palabras, la complejidad temporal experimenta un aumento significativo, respecto a los valores promedio anteriores. Esto podría indicar que el
+algoritmo tiene limitaciones en cuanto a eficiencia para manejar grandes cantidades de datos
+de entrada.
 Para sintetizar: destacamos que el método utilizado para generar palabras de acuerdo con los criterios establecidos. Sin embargo, se observa que podría tener limitaciones en términos de complejidad temporal al enfrentarse a volúmenes grandes de datos de entrada. Es fundamental seguir evaluando el rendimiento del método con diversas variaciones en los parámetros de entrada para optimizar su eficiencia.

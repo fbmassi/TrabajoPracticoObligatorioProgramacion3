@@ -39,7 +39,7 @@ El algoritmo `generarPalabras` se implementa utilizando la técnica de backtrack
 
 4. **Resultados**: Al finalizar todas las iteraciones y llamadas recursivas, la lista `resultado` contiene todas las palabras generadas dentro del rango especificado.
 
-![](Imagenes/pseudocodigo)
+![](Imagenes/pseudocodigo.png)
 
 ## Análisis de Complejidad Temporal Teórica y Práctica
 
@@ -82,4 +82,3 @@ algoritmo es eficiente para volúmenes moderados de datos de entrada, manteniend
 Sin embargo, es importante destacar que al generar 100 palabras, la complejidad temporal experimenta un aumento significativo, respecto a los valores promedio anteriores. Esto podría indicar que el
 algoritmo tiene limitaciones en cuanto a eficiencia para manejar grandes cantidades de datos
 de entrada.
-Para sintetizar: destacamos que el método utilizado para generar palabras de acuerdo con los criterios establecidos. Sin embargo, se observa que podría tener limitaciones en términos de complejidad temporal al enfrentarse a volúmenes grandes de datos de entrada. Es fundamental seguir evaluando el rendimiento del método con diversas variaciones en los parámetros de entrada para optimizar su eficiencia.

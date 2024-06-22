@@ -1,4 +1,11 @@
 # Trabajo Práctico Obligatorio de Programación III: Backtracking
+## Grupo
+
+- Antoniow, Manuel – LU: 1143605
+- Massi, Franco Baltasar – LU: 1156946
+
+Buenos Aires, 21 de Junio de 2024.
+
 ## Generador de Palabras con Backtracking
 
 Este repositorio contiene un algoritmo en Java para generar todas las posibles combinaciones de palabras dentro de un rango específico de longitud, utilizando conjuntos predefinidos de letras. El proyecto emplea la técnica de backtracking para explorar sistemáticamente configuraciones válidas de palabras.
@@ -53,22 +60,22 @@ La función generarPalabras es recursiva y se llama L veces en el peor de los ca
 
 Como se trata de una resta, la complejidad temporal se define por:
 
-![](Imagenes/matrizResta)
+![](Imagenes/matrizResta.png)
 
 Esta función cae en el caso A > 1. Por lo tanto, la complejidad temporal, en el peor de los casos es igual a…
 
-![](Imagenes/complejidad1)
+![](Imagenes/complejidad1.png)
 
 donde \( L \) representa el número de letras en los conjuntos de letras analizados.
 
 También hay que tener en cuenta que la función recursiva ocurre dentro de otro ciclo que se repite (Y – X + 1) veces en la función principal y que el costo de ejecutar ‘generarPalabras’ no es el mismo para cada longitud deseada. Por lo tanto, la complejidad temporal total la podemos calcular como...
 
-![](Imagenes/complejidadFinal)
+![](Imagenes/complejidadFinal.png)
 
 ### Práctica
 La clase de prueba `AlgoritmoLenguajeDeLaHumanidadImplTest` evalúa el rendimiento del método `descubirPalabrasDeLaHumanidad`. Las pruebas muestran que el algoritmo mantiene tiempos de ejecución consistentemente eficientes para diferentes tamaños de entrada (5, 10, 50, 100 palabras).
 
-![](Imagenes/resultados)
+![](Imagenes/resultados.png)
 
 ### Conclusiones
 Basado en los resultados obtenidos del algoritmo descubirPalabrasDeLaHumanidad, se puede concluir que es efectivo para generar una variedad significativa de palabras dentro de los parámetros establecidos. En particular, se observó que al emplear conjuntos específicos de letras, se pueden crear cantidades variadas de palabras que cumplen con criterios específicos de longitud y combinación de letras.

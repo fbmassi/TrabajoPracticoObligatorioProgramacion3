@@ -22,6 +22,8 @@ El algoritmo `generarPalabras` se implementa utilizando la técnica de backtrack
 
 4. **Resultados**: Al finalizar todas las iteraciones y llamadas recursivas, la lista `resultado` contiene todas las palabras generadas dentro del rango especificado.
 
+![](Imagenes/"Captura de pantalla 2024-06-22 a la(s) 12.23.22 a. m.")
+
 ## Análisis de Complejidad Temporal Teórica y Práctica
 
 El análisis de complejidad temporal del algoritmo se desglosa como sigue:

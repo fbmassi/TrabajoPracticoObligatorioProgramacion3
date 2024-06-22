@@ -1,5 +1,5 @@
-#### Trabajo Práctico Obligatorio de Programación III: Backtracking
-# Generador de Palabras con Backtracking
+# Trabajo Práctico Obligatorio de Programación III: Backtracking
+## Generador de Palabras con Backtracking
 
 Este repositorio contiene un algoritmo en Java para generar todas las posibles combinaciones de palabras dentro de un rango específico de longitud, utilizando conjuntos predefinidos de letras. El proyecto emplea la técnica de backtracking para explorar sistemáticamente configuraciones válidas de palabras.
 
@@ -28,7 +28,11 @@ El análisis de complejidad temporal del algoritmo se desglosa como sigue:
 
 ### Teórica
 
-Dado el análisis de las operaciones realizadas y la estructura recursiva del algoritmo, la complejidad temporal se estima como \( \Theta(L!) \), donde \( L \) representa el número de letras en los conjuntos de letras analizados.
+Dado el análisis de las operaciones realizadas y la estructura recursiva del algoritmo, la complejidad temporal se estima como `
+
+[IMAGEN]
+
+donde \( L \) representa el número de letras en los conjuntos de letras analizados.
 
 ### Práctica
 

@@ -39,7 +39,7 @@ El algoritmo `generarPalabras` se implementa utilizando la técnica de backtrack
 
 4. **Resultados**: Al finalizar todas las iteraciones y llamadas recursivas, la lista `resultado` contiene todas las palabras generadas dentro del rango especificado.
 
-![](pseudocodigo.png)
+![](pseudocodigo)
 
 ## Análisis de Complejidad Temporal Teórica y Práctica
 
@@ -53,22 +53,22 @@ La función generarPalabras es recursiva y se llama L veces en el peor de los ca
 
 Como se trata de una resta, la complejidad temporal se define por:
 
-![](matrizResta.png)
+![](matrizResta)
 
 Esta función cae en el caso A > 1. Por lo tanto, la complejidad temporal, en el peor de los casos es igual a…
 
-![](complejidad1.png)
+![](complejidad1)
 
 donde \( L \) representa el número de letras en los conjuntos de letras analizados.
 
 También hay que tener en cuenta que la función recursiva ocurre dentro de otro ciclo que se repite (Y – X + 1) veces en la función principal y que el costo de ejecutar ‘generarPalabras’ no es el mismo para cada longitud deseada. Por lo tanto, la complejidad temporal total la podemos calcular como...
 
-![](complejidadFinal.png)
+![](complejidadFinal)
 
 ### Práctica
 La clase de prueba `AlgoritmoLenguajeDeLaHumanidadImplTest` evalúa el rendimiento del método `descubirPalabrasDeLaHumanidad`. Las pruebas muestran que el algoritmo mantiene tiempos de ejecución consistentemente eficientes para diferentes tamaños de entrada (5, 10, 50, 100 palabras).
 
-![](resultados.png)
+![](resultados)
 
 ### Conclusiones
 Basado en los resultados obtenidos del algoritmo descubirPalabrasDeLaHumanidad, se puede concluir que es efectivo para generar una variedad significativa de palabras dentro de los parámetros establecidos. En particular, se observó que al emplear conjuntos específicos de letras, se pueden crear cantidades variadas de palabras que cumplen con criterios específicos de longitud y combinación de letras.

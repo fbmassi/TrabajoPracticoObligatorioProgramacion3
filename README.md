@@ -1,8 +1,8 @@
 # Trabajo Práctico Obligatorio de Programación III: Backtracking
 ## Grupo
 
-- Antoniow, Manuel – LU: 1143605
-- Massi, Franco Baltasar – LU: 1156946
+- Massi, Franco Baltasar
+- Antoniow, Manuel 
 
 Buenos Aires, 21 de Junio de 2024.
 
@@ -41,7 +41,7 @@ El algoritmo `generarPalabras` se implementa utilizando la técnica de backtrack
 
 3. **Backtracking**:
    - **Construcción de Palabras**: Comienza con una palabra vacía y agrega letras recursivamente. Cuando se alcanza la longitud objetivo de la palabra, se agrega al conjunto de resultados.
-   - **Poda**: Se detiene la exploración de ramas cuando la longitud de la palabra iguala `longitudObjetivo`, optimizando así el proceso.
+   - **Poda**: Se detiene la exploración de ramas cuando la longitud de la palabra igual a `longitudObjetivo`, optimizando así el proceso.
    - **Recursividad**: Explora todas las combinaciones posibles de letras para cada posición de la palabra, manteniendo el orden de los conjuntos de letras.
 
 4. **Resultados**: Al finalizar todas las iteraciones y llamadas recursivas, la lista `resultado` contiene todas las palabras generadas dentro del rango especificado.

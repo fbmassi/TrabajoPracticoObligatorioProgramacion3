@@ -1,34 +1,43 @@
 package Implementaciones;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import Interfaz.AlgoritmoLenguajeDeLaHumanidad;
 
-
 public class AlgoritmoLenguajeDeLaHumanidadImpl implements AlgoritmoLenguajeDeLaHumanidad {
 
-	@Override
-	public List<String> descubirPalabrasDeLaHumanidad(List letras, int rangoDesde, int rangoHasta) {
-		List<String> resultado = new ArrayList<String>();
-        for (int longitud = rangoDesde; longitud <= rangoHasta; longitud++) {
-            generarPalabras(letras, "", longitud, 0, resultado);
-        }
+    public List<String> descubirPalabrasDeLaHumanidad(List letras, int rangoDesde, int rangoHasta) {
+        List<String> resultado = new ArrayList<String>();
+        List<Integer> longitudesDeseadas = generarConjuntoDeNumeros(rangoDesde, rangoHasta);
+        int longitudMaxima = letras.size();
+        generarPalabras(letras, "", longitudesDeseadas, 0, rangoHasta, longitudMaxima, resultado);
         return resultado;
     }
 
-    private static void generarPalabras(List<List<String>> alfabeto, String palabraActual, int longitudObjetivo, int etapa, List<String> resultado) {
-    	List<String> grupoDeLetras = alfabeto.get(etapa);
-    	for (String letra : grupoDeLetras) {
-            String nuevaPalabra = palabraActual + letra;
-            if (etapa == longitudObjetivo - 1) {
-                resultado.add(nuevaPalabra);
-            } else if (etapa < longitudObjetivo - 1){
-            	generarPalabras(alfabeto, nuevaPalabra, longitudObjetivo, etapa + 1, resultado);
+    private void generarPalabras(List<List<String>> alfabeto, String palabraActual, List<Integer> longitudesDeseadas, int etapa, int rangoHasta, int longitudMaxima, List<String> resultado) {
+        if (etapa < longitudMaxima && etapa < rangoHasta) {
+            List<String> grupoDeLetras = alfabeto.get(etapa);
+            for (String letra : grupoDeLetras) {
+                String nuevaPalabra = palabraActual + letra;
+                int longitudNuevaPalabra = nuevaPalabra.length();
+                if (longitudesDeseadas.contains(longitudNuevaPalabra)) {
+                    resultado.add(nuevaPalabra);
+                }
+                generarPalabras(alfabeto, nuevaPalabra, longitudesDeseadas, etapa + 1, rangoHasta, longitudMaxima, resultado);
             }
         }
     }
-    
+
+    private List<Integer> generarConjuntoDeNumeros(int desde, int hasta) {
+        List<Integer> numeros = new ArrayList<>();
+        for (int i = desde; i <= hasta; i++) {
+            numeros.add(i);
+        }
+        return numeros;
+    }
+
     private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public List<List<String>> generarConjuntosDeLetras(int length, int numWords) {

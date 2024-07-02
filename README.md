@@ -33,18 +33,30 @@ Backtracking es una técnica algorítmica para resolver problemas recursivamente
 El algoritmo utilizará la técnica de backtracking para generar todas las posibles combinaciones de letras que forman palabras dentro del rango de longitud especificado. La idea es construir las palabras de forma recursiva, agregando una letra a la vez y retrocediendo cuando se alcanza una longitud.
 
 ## Funcionamiento del Algoritmo
-El algoritmo `generarPalabras` se implementa utilizando la técnica de backtracking, lo que permite construir palabras paso a paso y podar ramas que exceden la longitud máxima deseada. Aquí se resume el flujo y las características clave del algoritmo:
 
-1. **Inicialización y Configuración**: Se inicia con la función `descubrirPalabrasDeLaHumanidad`, que establece los parámetros iniciales para la generación de palabras.
+El algoritmo `generarPalabras` se implementa utilizando la técnica de backtracking, lo que permite construir palabras paso a paso y podar ramas que exceden la longitud máxima deseada. A continuación se describe el flujo y las características clave del algoritmo:
 
-2. **Generación de Palabras**: Para cada longitud de palabra en el rango especificado (desde `rangoDesde` hasta `rangoHasta`), se llama a `generarPalabras`. Esta función construye todas las combinaciones posibles de palabras utilizando los conjuntos de letras proporcionados.
+### Inicialización y Configuración
 
-3. **Backtracking**:
-   - **Construcción de Palabras**: Comienza con una palabra vacía y agrega letras recursivamente. Cuando se alcanza la longitud objetivo de la palabra, se agrega al conjunto de resultados.
-   - **Poda**: Se detiene la exploración de ramas cuando la longitud de la palabra igual a `longitudObjetivo`, optimizando así el proceso.
-   - **Recursividad**: Explora todas las combinaciones posibles de letras para cada posición de la palabra, manteniendo el orden de los conjuntos de letras.
+El proceso comienza con la función `descubrirPalabrasDeLaHumanidad`, la cual establece los parámetros iniciales para la generación de palabras, incluyendo los conjuntos de letras y los rangos de longitud.
 
-4. **Resultados**: Al finalizar todas las iteraciones y llamadas recursivas, la lista `resultado` contiene todas las palabras generadas dentro del rango especificado.
+### Generación de Palabras
+
+Para cada longitud de palabra en el rango especificado (desde `rangoDesde` hasta `rangoHasta`), se invoca la función `generarPalabras`. Esta función construye todas las combinaciones posibles de palabras utilizando los conjuntos de letras proporcionados.
+
+### Backtracking
+
+- **Construcción de Palabras:** Comienza con una palabra vacía y agrega letras recursivamente. Cuando se alcanza la longitud objetivo de la palabra, se agrega al conjunto de resultados.
+  
+- **Poda:** Detiene la exploración de ramas cuando se alcanza la longitud máxima deseada para optimizar el proceso de generación.
+
+- **Recursividad:** Explora todas las combinaciones posibles de letras para cada posición de la palabra, manteniendo el orden de los conjuntos de letras.
+
+### Resultados
+
+Al finalizar todas las iteraciones y llamadas recursivas, la lista `resultado` contiene todas las palabras generadas dentro del rango especificado.
+
+Este enfoque asegura la exhaustividad en la generación de palabras dentro de los límites establecidos por los parámetros `X` (rango mínimo) y `Y` (rango máximo), utilizando eficientemente los conjuntos de letras proporcionados.
 
 ![](Imagenes/pseudocodigo.png)
 
@@ -66,26 +78,28 @@ Esta función cae en el caso A > 1. Por lo tanto, la complejidad temporal, en el
 
 ![](Imagenes/complejidad1.png)
 
-donde \( L \) representa el número de letras en los conjuntos de letras analizados.
-
-También hay que tener en cuenta que la función recursiva ocurre dentro de otro ciclo que se repite (Y – X + 1) veces en la función principal y que el costo de ejecutar ‘generarPalabras’ no es el mismo para cada longitud deseada. Por lo tanto, la complejidad temporal total la podemos calcular como...
-
-![](Imagenes/complejidadFinal.png)
+donde \( L \) representa el número de letras en los conjuntos de letras analizados y n la cantidad de conjuntos de letras para formar palabras que se pasa por parametro
 
 ### Práctica
-La clase de prueba `AlgoritmoLenguajeDeLaHumanidadImplTest` evalúa el rendimiento del método `descubirPalabrasDeLaHumanidad`. Las pruebas muestran que el algoritmo mantiene tiempos de ejecución consistentemente eficientes para diferentes tamaños de entrada (5, 10, 50, 100 palabras).
 
-![](Imagenes/resultados.png)
+Durante la evaluación de la complejidad práctica del algoritmo `descubrirPalabrasDeLaHumanidad`, se observó un aumento significativo en el tiempo de ejecución a medida que se incrementaba la longitud máxima de las palabras generadas. Los resultados experimentales muestran una tendencia que sugiere un crecimiento exponencial en el tiempo de ejecución conforme aumenta la complejidad del problema.
+
+![](Imagenes/resultadosFinales.png)
+
+![](Imagenes/testeosJuntos.png)
+
+Aunque la teoría predice un incremento que triplicaría el tiempo de ejecución en promedio con cada incremento de longitud, ya que las pruebas se realizaron con conjuntos de longitud L = 3, en la práctica se registró un aumento promedio del 128.21% respecto al intervalo anterior. Este fenómeno indica que si bien el algoritmo exhibe una complejidad exponencial, la implementación práctica muestra un aumento más moderado en el tiempo de ejecución.
+
+Estos hallazgos son consistentes con la naturaleza del algoritmo de backtracking utilizado, el cual, si bien es eficaz para generar todas las combinaciones posibles de palabras, enfrenta desafíos en términos de rendimiento cuando se amplían los rangos de longitud de las palabras buscadas.
+
 
 ### Conclusiones
-Basado en los resultados obtenidos del algoritmo descubirPalabrasDeLaHumanidad, se puede concluir que es efectivo para generar una variedad significativa de palabras dentro de los parámetros establecidos. En particular, se observó que al emplear conjuntos específicos de letras, se pueden crear cantidades variadas de palabras que cumplen con criterios específicos de longitud y combinación de letras.
-Sin embargo, es importante reconocer la necesidad de ajustar los parámetros para lograr que se genere una cantidad de palabras deseada. Basado en los resultados de la medición de la complejidad temporal para los diferentes casos de prueba en el estudio del algoritmo descubirPalabrasDeLaHumanidad, se pueden las siguientes observaciones:
- - Consistencia de los tiempos: los tiempos de ejecución para generar las
-palabras se mantienen relativamente estables en los casos en que se
-generan 5, 10 y 50 palabras.
- - Complejidad temporal: se observa que conforme aumenta el número de palabras generadas (de 5 a 100 palabras), los tiempos de ejecución aumentan de manera gradual y se mantienen consistentemente eficientes en los casos de 5, 10 y 50 palabras.
-Nos resultó llamativo que el promedio de la complejidad temporal para generar 10 palabras sea mayor que el que se obtuvo para generar 50 palabras. Esto sugeriría que Este patrón sugiere que el
-algoritmo es eficiente para volúmenes moderados de datos de entrada, manteniendo tiempos de ejecución relativamente bajos, constantes y predecibles.
-Sin embargo, es importante destacar que al generar 100 palabras, la complejidad temporal experimenta un aumento significativo, respecto a los valores promedio anteriores. Esto podría indicar que el
-algoritmo tiene limitaciones en cuanto a eficiencia para manejar grandes cantidades de datos
-de entrada.
+Basado en los resultados obtenidos del algoritmo `descubrirPalabrasDeLaHumanidad`, se puede concluir que el mismo es efectivo para generar una variedad significativa de palabras dentro de los parámetros establecidos. Además, el método utilizado para generar conjuntos aleatorios de letras, utilizando Random y una cadena que contiene todas las letras del alfabeto, ha mostrado ser efectivo para la creación sistemática de palabras dentro de rangos específicos de longitud y complejidad.
+
+A partir de los resultados de la medición de la complejidad temporal práctica del algoritmo `descubrirPalabrasDeLaHumanidad`, se pueden hacer las siguientes observaciones:
+
+- **INCREMENTO DEL TIEMPO DE EJECUCIÓN CON LA LONGITUD DE LAS PALABRAS:** Se observó que a medida que se incrementa la longitud de las palabras generadas, el tiempo de ejecución del algoritmo aumenta significativamente. Los gráficos del costo temporal en función de la cantidad máxima de letras muestran una tendencia que parece seguir una función exponencial. Sin embargo, aunque este incremento sugiere una tendencia exponencial, se esperaría que cada incremento triplicara el tiempo de ejecución en promedio (alrededor del 200%). Esto se debe a que el conjunto de entrada probado tenía una longitud igual a 3 para cada conjunto de letras. En la práctica, el incremento promedio registrado apenas supera la duplicación, siendo este del 128.21% respecto al intervalo anterior.
+
+- **VARIABILIDAD EN LOS TIEMPOS DE EJECUCIÓN:** Aunque se realizaron cinco pruebas independientes para obtener resultados más precisos, se notó una variabilidad en los tiempos de ejecución para rangos de longitud similares. Esto puede atribuirse a factores como la gestión de memoria y la carga de procesamiento del sistema durante la ejecución de las pruebas.
+
+- **LÍMITE SUPERIOR DEBIDO A LA MEMORIA:** Se determinó que la distancia entre el rango mínimo y máximo de letras no puede exceder 15 (al menos para una entrada cuyos conjuntos contengan tres letras) debido a las limitaciones de memoria para almacenar los resultados generados. Este límite establece una restricción práctica en la utilización del algoritmo para conjuntos de datos más grandes o más complejos.

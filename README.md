@@ -58,6 +58,10 @@ Al finalizar todas las iteraciones y llamadas recursivas, la lista `resultado` c
 
 Este enfoque asegura la exhaustividad en la generación de palabras dentro de los límites establecidos por los parámetros `X` (rango mínimo) y `Y` (rango máximo), utilizando eficientemente los conjuntos de letras proporcionados.
 
+![](estrategiaDeResolución.png)
+
+## Pseudocódigo
+
 ![](Imagenes/pseudocodigo.png)
 
 ## Análisis de Complejidad Temporal Teórica y Práctica

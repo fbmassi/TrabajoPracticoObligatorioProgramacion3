@@ -4,7 +4,7 @@
 - Massi, Franco Baltasar
 - Antoniow, Manuel 
 
-Buenos Aires, 21 de Junio de 2024.
+Buenos Aires, 2 de Julio de 2024.
 
 ## Generador de Palabras con Backtracking
 

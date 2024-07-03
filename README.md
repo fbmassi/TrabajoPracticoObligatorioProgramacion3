@@ -30,7 +30,9 @@ Salida:
 Backtracking es una técnica algorítmica para resolver problemas recursivamente construyendo una solución de pieza en pieza y removiendo soluciones que fallan en cumplir los criterios del problema en cualquier punto del tiempo. Es particularmente útil para problemas que requieren la generación de todas las configuraciones posibles de un conjunto dado, como el problema de generación de palabras en este caso.
 
 ## Estrategia de Resolución
-El algoritmo utilizará la técnica de backtracking para generar todas las posibles combinaciones de letras que forman palabras dentro del rango de longitud especificado. La idea es construir las palabras de forma recursiva, agregando una letra a la vez y retrocediendo cuando se alcanza una longitud.
+El algoritmo utilizará la técnica de backtracking para generar todas las posibles combinaciones de letras que forman palabras dentro del rango de longitud especificado. La idea es construir las palabras de forma recursiva, agregando una letra a la vez y retrocediendo cuando se alcanza una longitud máxima, la cual puede ser Y (`rangoHasta`) o la cantidad de conjuntos de letras pasados por parámetro.
+
+![](Imagenes/estrategiaDeResolución.png)
 
 ## Funcionamiento del Algoritmo
 
@@ -57,8 +59,6 @@ Para cada longitud de palabra en el rango especificado (desde `rangoDesde` hasta
 Al finalizar todas las iteraciones y llamadas recursivas, la lista `resultado` contiene todas las palabras generadas dentro del rango especificado.
 
 Este enfoque asegura la exhaustividad en la generación de palabras dentro de los límites establecidos por los parámetros `X` (rango mínimo) y `Y` (rango máximo), utilizando eficientemente los conjuntos de letras proporcionados.
-
-![](Imagenes/estrategiaDeResolución.png)
 
 ## Pseudocódigo
 
